@@ -35,15 +35,13 @@ pipeline {
         
         stage('Code Analysis') {
             steps {
-                 echo "- include a code analysis programme that uses Fortify to examine the code and make sure it complies with industry requirements
-"
+                 echo "- include a code analysis programme that uses Fortify to examine the code and make sure it complies with industry requirements"
             }
         }
         
         stage('Security Scan') {
             steps {
-                echo "to find any vulnerabilities, run a Qualys security scan on the code.
-"
+                echo "to find any vulnerabilities, run a Qualys security scan on the code."
             }
             post {
                 success{
@@ -67,15 +65,13 @@ pipeline {
         
         stage('Deploy to Staging') {
             steps {
-               echo "Use CircleCI to deploy the application to a staging server.
-"
+               echo "Use CircleCI to deploy the application to a staging server."
              }
         }
         
         stage('Integration Tests on Staging') {
             steps {
-                 echo " Using Cypress to run integration tests on the staging environment to make sure the application performs as anticipated
-"
+                 echo " Using Cypress to run integration tests on the staging environment to make sure the application performs as anticipated"
             }
         }
         
