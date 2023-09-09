@@ -18,8 +18,7 @@ pipeline {
             to: "ruthvikbeeram@gmail.com",
             subject: "Build status",
             body: "Test was successful and logs were attached",
-            attachLog: true,
-	    attachmentsPattern: 'generatedFile.txt'
+            attachLog: true
         )
     }
     failure {
@@ -27,8 +26,7 @@ pipeline {
             to: "ruthvikbeeram@gmail.com",
             subject: "Build Status",
             body: "Test Failed and logs were attched",
-            attachLog: true,
-	    attachmentsPattern: 'generatedFile.txt'
+            attachLog: true
         )
     }
 }
@@ -53,8 +51,7 @@ pipeline {
                     to:"ruthvikbeeram@gmail.com",
                     subject:"Build Status" ,
                     body: "Scan was successful",
-		    attachLog: true,
-	    attachmentsPattern: 'generatedFile.txt'
+		    attachLog: true
 			)
                 }
                 failure{
@@ -62,8 +59,7 @@ pipeline {
                     to:"ruthvikbeeram@gmail.com",
                     subject:"Build Status",
                     body: "Scan Failed and the logs were attached",
-                    attachLog : true,
-	    attachmentsPattern: 'generatedFile.txt'
+                    attachLog : true
 			)
                 }
             }
@@ -85,8 +81,7 @@ pipeline {
         
         stage('Deploy to Production') {
             steps {
-               echo "Docker Swarm is used to deploy the code to a production environment.
-"
+               echo "Docker Swarm is used to deploy the code to a production environment."
             }
         }
     }
